@@ -64,3 +64,37 @@
     para bajarlo:
 
     docker-compose down
+
+## ejecutar nginx-wordpressweb-wordpressdb monolitico - monoservidor:
+
+    mkdir nginx-all
+    cd nginx-all
+    cp ../docker-compose-nginx-wordpress-monoserver.yml docker-compose.yml
+
+    para subirlo:
+
+    docker-compose up -d
+
+    desde un browser entrar a: http:<ip-publica>
+
+    para bajarlo:
+
+    docker-compose down
+
+## ejecutar nginx como proxy inverso de un servidor wordpress-web posiblemente en una subred privada:
+
+    mkdir nginx
+    cd nginx
+    cp ../docker-compose-nginx.yml docker-compose.yml
+
+    configure el nginx.conf con la dirección real del servidor wordpress-web
+
+    para subirlo:
+
+    docker-compose up -d
+
+    desde un browser entrar a: http:<ip-publica>
+
+    para bajarlo:
+
+    docker-compose down
