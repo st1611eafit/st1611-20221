@@ -12,89 +12,96 @@
     sudo usermod -a -G docker ec2-user
 
     pip3 install docker-compose
+    exit
+
+# clonar el repositorio github del curso:
+
+    git clone https://github.com/st1611eafit/st1611-20221.git
 
 ## ejecutar wordpress en un solo servidor con docker:
 
     referencia: https://hub.docker.com/_/wordpress
 
-    mkdir wordpress-monoserver
-    cd wordpress-monoserver
-    cp ../docker-compose-wordpress-monoserver.yml docker-compose.yml
+    mkdir $HOME/wordpress-monoserver
+    
+    cp $HOME/st1611-20221/docker-compose-wordpress-monoserver.yml $HOME/wordpress-monoserver/docker-compose.yml
 
     para subirlo:
 
+    cd $HOME/wordpress-monoserver
     docker-compose up -d
 
     desde un browser entrar a: http:<ip-publica>
 
     para bajarlo:
-
+    cd $HOME/wordpress-monoserver
     docker-compose down
 
 # ejecutar wordpress en dos servidores con docker:
 
 ## wordpress-db servidor2
 
-    mkdir wordpress-db
-    cd wordpress-db
-    cp ../docker-compose-wordpress-server2db.yml docker-compose.yml
+    mkdir $HOME/wordpress-db
+    
+    cp $HOME/st1611-20221/docker-compose-wordpress-server2db.yml $HOME/wordpress-db/docker-compose.yml
 
     para subirlo:
-
+    cd $HOME/wordpress-db
     docker-compose up -d
 
     para bajarlo:
-
+    cd $HOME/wordpress-db
     docker-compose down
 
 ## wordpress-web servidor1
 
-    mkdir wordpress-web
-    cd wordpress-web
-    cp ../docker-compose-wordpress-server1web.yml docker-compose.yml
+    mkdir $HOME/wordpress-web
+    cp $HOME/st1611-20221/docker-compose-wordpress-server1web.yml $HOME/wordpress-web/docker-compose.yml
 
     ACTUALICE LA IP DEL <ip-server-db> en 'docker-compose.yml' con la IP del servidor2 anterior
 
     para subirlo:
-
+    cd $HOME/wordpress-web
     docker-compose up -d
 
     desde un browser entrar a: http:<ip-publica>
 
     para bajarlo:
 
+    cd $HOME/wordpress-web
     docker-compose down
 
 ## ejecutar nginx-wordpressweb-wordpressdb monolitico - monoservidor:
 
-    mkdir nginx-all
-    cd nginx-all
-    cp ../docker-compose-nginx-wordpress-monoserver.yml docker-compose.yml
+    mkdir $HOME/nginx-all
+
+    cp $HOME/st1611-20221/docker-compose-nginx-wordpress-monoserver.yml $HOME/nginx-all/docker-compose.yml
 
     para subirlo:
-
+    cd $HOME/nginx-all
     docker-compose up -d
 
     desde un browser entrar a: http:<ip-publica>
 
     para bajarlo:
 
+    cd $HOME/nginx-all
     docker-compose down
 
 ## ejecutar nginx como proxy inverso de un servidor wordpress-web posiblemente en una subred privada:
 
-    mkdir nginx
-    cd nginx
-    cp ../docker-compose-nginx.yml docker-compose.yml
+    mkdir $HOME/nginx
+
+    cp $HOME/st1611-20221/docker-compose-nginx.yml $HOME/nginx/docker-compose.yml
 
     configure el nginx.conf con la dirección real del servidor wordpress-web
 
     para subirlo:
-
+    cd $HOME/nginx
     docker-compose up -d
 
     desde un browser entrar a: http:<ip-publica>
 
     para bajarlo:
-
+    cd $HOME/nginx
     docker-compose down
