@@ -1,0 +1,18 @@
+# /etc/systemd/system/docker-compose-app.service
+
+[Unit]
+Description=Docker Compose Application Service for App
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/ec2-user/app
+ExecStart=/home/ec2-user/.local/bin/docker-compose up -d
+ExecStop=/home/ec2-user/.local/bin/docker-compose down
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
+

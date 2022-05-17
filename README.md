@@ -18,6 +18,26 @@
 
     git clone https://github.com/st1611eafit/st1611-20221.git
 
+## correr docker-compose como un servicio del sistema operativo
+
+    Configuración para cada que baje y suba la máquina, ejecute docker-compose up -d
+
+    1.	Instale a nivel de root, el docker-compose
+
+    $ sudo su
+    $ pip3 install docker-compose 
+    $ exit
+
+    2.	Modifique el archivo ‘docker-compose-app.service’ a su conveniencia
+
+    $ mkdir app
+    $ cp $HOME/st1611-20221/docker-composer-app.service $HOME/app/
+    $ nano $HOME/app/docker-composer-app.service
+    
+    $ sudo cp $HOME/app/docker-composer-app.service /etc/systemd/system/
+    $ sudo systemctl enable docker-composer-app
+    $ sudo systemctl start docker-composer-app
+
 ## ejecutar wordpress en un solo servidor con docker:
 
     referencia: https://hub.docker.com/_/wordpress
