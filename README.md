@@ -31,12 +31,12 @@
     2.	Modifique el archivo ‘docker-compose-app.service’ a su conveniencia
 
     $ mkdir app
-    $ cp $HOME/st1611-20221/docker-composer-app.service $HOME/app/
-    $ nano $HOME/app/docker-composer-app.service
+    $ cp $HOME/st1611-20221/docker-compose-app.service $HOME/app/
+    $ nano $HOME/app/docker-compose-app.service
     
-    $ sudo cp $HOME/app/docker-composer-app.service /etc/systemd/system/
-    $ sudo systemctl enable docker-composer-app
-    $ sudo systemctl start docker-composer-app
+    $ sudo cp $HOME/app/docker-compose-app.service /etc/systemd/system/
+    $ sudo systemctl enable docker-compose-app
+    $ sudo systemctl start docker-compose-app
 
 ## ejecutar wordpress en un solo servidor con docker:
 
