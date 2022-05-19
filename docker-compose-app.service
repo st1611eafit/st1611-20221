@@ -8,6 +8,7 @@ After=docker.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
+# copie en el directorio /home/ec2-user/app el docker-compose.yml y demás archivos que requiera para correr el servicio
 WorkingDirectory=/home/ec2-user/app
 ExecStart=/home/ec2-user/.local/bin/docker-compose up -d
 ExecStop=/home/ec2-user/.local/bin/docker-compose down
