@@ -32,6 +32,7 @@
 
     $ mkdir app
 ### copie los archivos docker-compose.yml y demás archivos que requiera en la carpeta 'app'
+    $ cp docker-compose.yml $HOME/app/
     $ cp $HOME/st1611-20221/docker-compose-app.service $HOME/app/
     $ nano $HOME/app/docker-compose-app.service
     
