@@ -1,4 +1,4 @@
-# st1611-20221 - Edwin Montoya - emontoya@eafit.edu.co
+# ST1611-20221 - Edwin Montoya - emontoya@eafit.edu.co
 
 ## instalación de docker en amazon AMI2
 
@@ -22,23 +22,23 @@
 
     Configuración para cada que baje y suba la máquina, ejecute docker-compose up -d
 
-    1.	Instale a nivel de root, el docker-compose
+### 1.	Instale a nivel de root, el docker-compose
 
-    $ sudo su
-    $ pip3 install docker-compose 
-    $ exit
+    sudo su
+    pip3 install docker-compose 
+    exit
 
-    2.	Modifique el archivo ‘docker-compose-app.service’ a su conveniencia
+### 2.	Modifique el archivo ‘docker-compose-app.service’ a su conveniencia
 
-    $ mkdir app
-### copie los archivos docker-compose.yml y demás archivos que requiera en la carpeta 'app'
-    $ cp docker-compose.yml $HOME/app/
-    $ cp $HOME/st1611-20221/docker-compose-app.service $HOME/app/
-    $ nano $HOME/app/docker-compose-app.service
+    mkdir app
+#### copie los archivos docker-compose.yml y demás archivos que requiera en la carpeta 'app'
+    cp docker-compose.yml $HOME/app/
+    cp $HOME/st1611-20221/docker-compose-app.service $HOME/app/
+    nano $HOME/app/docker-compose-app.service
     
-    $ sudo cp $HOME/app/docker-compose-app.service /etc/systemd/system/
-    $ sudo systemctl enable docker-compose-app
-    $ sudo systemctl start docker-compose-app
+    sudo cp $HOME/app/docker-compose-app.service /etc/systemd/system/
+    sudo systemctl enable docker-compose-app
+    sudo systemctl start docker-compose-app
 
 ## ejecutar wordpress en un solo servidor con docker:
 
